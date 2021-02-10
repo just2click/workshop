@@ -1,0 +1,11 @@
+<div class="charts-container">
+    <!-- <chart></chart> -->
+    <!-- {{chartInfo|json}} -->
+    <!-- <google-chart class="chart" id="chart_div" [title]={{chartInfo.title}} [data]={{chartInfo.data}} [type]="chartInfo.type" [columns]={{chartInfo.columnNames}} [options]={{chartInfo.options}}></google-chart> -->
+    <div class="market-price">
+        <chart [dataM]="dataM" [titleM]="titleM" [optionsM]="optionsM" [nameM]="nameM"></chart>
+    </div>
+    <div class="transSecton">
+        <chart [dataT]="dataT" [titleT]="titleT" [optionsT]="optionsT" [nameT]="nameT"></chart>
+    </div>
+</div>

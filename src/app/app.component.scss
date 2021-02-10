@@ -1,0 +1,35 @@
+.main-container {
+    // width: 40%;
+    // margin: 10% auto;
+    // border: 2px solid gray;
+    // border-radius: 7px;
+    // box-shadow: 2px -2px 9px #808080bf;
+    nav {
+        height: 65px;
+        background-color: #008b8bc2;
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+        justify-content: space-around;
+        position: revert;
+        ul {
+            list-style: none;
+            display: flex;
+            & > li {
+                margin-left: 20px;
+                text-decoration: none;
+                margin-top: auto;
+                margin-right: 45px;
+                img {
+                    width: 42px;
+                }
+            }
+        }
+        .active-nav {
+            font-weight: bold;
+            border-bottom: 3px solid;
+            padding: 5px;
+            text-decoration: none;
+        }
+    }
+}

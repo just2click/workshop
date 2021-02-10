@@ -1,0 +1,25 @@
+.signup-container {
+    display: grid;
+    justify-content: center;
+    margin-top: 125px;
+    .input {
+        height: 50px;
+        display: grid;
+        gap: 17px;
+        & > * {
+            height: 40px;
+        }
+        input {
+            font-size: 19px;
+            padding-left: 10px;
+            border: 2px solid gray;
+            border-radius: 3px;
+        }
+    }
+    .img {
+        margin: auto;
+        img {
+            width: 95px;
+        }
+    }
+}

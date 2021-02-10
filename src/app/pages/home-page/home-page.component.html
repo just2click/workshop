@@ -1,0 +1,21 @@
+<div class="home-page-container">
+    <div class="user-area">
+        <h1>Hello {{user.name}}</h1>
+        <div class="user-coins">
+            <img src="../../../assets/imgs/coins.png"/>
+            <span>Coins:{{user.coins}}</span>
+        </div>
+        <div class="btc">
+            <img src="../../../assets/imgs/bitcoin.png"/>
+            <span>BTC:{{rate}} </span>
+        </div>
+    </div>
+    <div class="moves">
+        <div class="top">
+            <p>Your last {{(user.moves).length}} Moves:</p>
+            <hr>
+            <move-preview *ngFor="let move of user.moves" [move]="move"></move-preview>
+        </div>
+    </div>
+    <!-- <router-outlet></router-outlet> -->
+</div>
