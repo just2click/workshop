@@ -1,6 +1,0 @@
-<div class="contact-list">
-    <contact-preview *ngFor="let contact of contacts" [contact]="contact" (click)="onSelectContact.emit(contact._id)"></contact-preview>
-</div>
-<div class="add-btn">
-    <button class="btn" [routerLink]="['/edit']">+</button>
-</div>
