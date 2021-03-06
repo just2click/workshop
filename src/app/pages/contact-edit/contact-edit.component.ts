@@ -10,7 +10,6 @@ import { ContactService } from 'src/app/services/contact.service';
   styleUrls: ['./contact-edit.component.scss']
 })
 export class ContactEditComponent implements OnInit {
-  // contact: Contact
   @Input() contact: Contact
   @Input() isAtEdit = true
   subscription: Subscription
@@ -18,8 +17,6 @@ export class ContactEditComponent implements OnInit {
   constructor(private contactService: ContactService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
-    console.log(this.route);
-
     this.subscription = this.route.data.subscribe(data => {
       this.contact = data.contact ? data.contact : this.contactService.getEmptyContact()
     })
@@ -30,20 +27,18 @@ export class ContactEditComponent implements OnInit {
   }
 
   onSubmitForm(value: any) {
-    console.log(this.route);
-
-    console.log(value);
     this.contactService.save({ ...this.contact })
     this.contactService.setFilter()
     this.isAtEdit = false
     setTimeout(() => this.router.navigateByUrl('/contact'), 2000)
   }
+
   removeContact() {
     this.contactService.removeContact(this.contact._id)
     setTimeout(() => this.router.navigateByUrl('/contact'), 2000)
   }
-  onGoToDetails() {
 
+  onGoToDetails() {
     this.router.navigateByUrl(this.contact._id ? `/contact/${this.contact._id}` : '/contact')
   }
 }

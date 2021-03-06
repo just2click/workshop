@@ -11,26 +11,18 @@ const KeyUser = 'userDB'
 export class UserService {
 
   constructor(private storageService: StorageService, private contactService: ContactService) { }
-  // private _user = {
-  //   name: "Ochoa Hyde",
-  //   coins: 100,
-  //   moves: ['']
-  // }
+
   user: User = null
+
   getUser() {
     const user = localStorage.getItem(KeyUser)
-    console.log('user', user);
-
     if (!user) return Promise.reject('no user')
     this.user = JSON.parse(user)
-    console.log('this.user', this.user);
-
     return Promise.resolve(this.user)
-    // return Promise.resolve({ ...this._user })
   }
 
   signup(name: string) {
-    const user = new User(name, 100, []) //creating a new user by the global class
+    const user = new User(name, 100, []) 
     user.name = name
     user._id = this.contactService.makeId()
     this.user = user

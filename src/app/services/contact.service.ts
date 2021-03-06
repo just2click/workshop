@@ -1,15 +1,14 @@
 import { Injectable } from '@angular/core';
-// import { HttpClient } from '@angular/common/http';
 import { Contact } from '../model/contact.model';
 import { BehaviorSubject, observable, Observable, of } from 'rxjs';
-import { observeOn } from 'rxjs/operators';
+import { StorageService } from './storage.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ContactService {
 
-  constructor() { }
+  constructor(private storageService: StorageService) { }
 
   private _filterBy$ = new BehaviorSubject({ name: '' })
   public filterBy$ = this._filterBy$.asObservable()
@@ -31,18 +30,14 @@ export class ContactService {
 
   public query() {
     const filterBy = this._filterBy$.getValue()
-    console.log(this._contactsDB);
-
+    this._contactsDB.map(contact => this.storageService.save(contact._id, contact))
+    this.storageService.save('contactsDB', this._contactsDB)
     const contacts = this._contactsDB.filter(({ name }) => {
       return name.toLowerCase().includes(filterBy.name.toLowerCase())
     })
     this._contacts$.next(contacts)
   }
 
-  // public getById(contactId: string) {
-  //   const contact = this._contactsDB.find(contact => contact._id === contactId)
-  //   return of({ ...contact })
-  // }
   public getById(contactId: string): Observable<Contact> {
     const contact = this._contactsDB.find(contact => contact._id === contactId)
     return contact ? of({ ...contact }) : Observable.throw(`contact id ${contactId} not found`)
@@ -74,13 +69,14 @@ export class ContactService {
     contact._id = this.makeId()
     this._contactsDB.push(contact)
     this._contacts$.next(this._contactsDB)
+    this.storageService.save(contact._id, contact)
     this.setFilter()
     return of(contact)
   }
 
   public removeContact(contactId: string) {
     this._contactsDB = this._contactsDB.filter(contact => contact._id !== contactId)
-    this._contacts$.next(this._contactsDB) //throwing a new ball with the updated data array
+    this._contacts$.next(this._contactsDB) 
   }
 
   public makeId(length = 5) {
@@ -91,6 +87,4 @@ export class ContactService {
     }
     return text;
   }
-
-
 }

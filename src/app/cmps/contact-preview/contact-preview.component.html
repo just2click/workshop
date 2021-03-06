@@ -1,5 +1,9 @@
 <div class="contact-preview" [routerLink]="['/contact/',contact._id]">
+    <div class="img">
     <img src="https://robohash.org/set_set5/{{contact._id}}?size=50x50">
-   <p>{{contact.name}}</p>
-
+</div>
+    <div class="user-details">
+      <p>{{contact.name}}</p>
+  <small>{{contact.email}}</small>
+  </div>
 </div>

@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BitcoinService } from 'src/app/services/bitcoin.service';
 import { GoogleChartsModule } from 'angular-google-charts';
 import { Subscription } from 'rxjs';
-// google.charts.load('current', { 'packages': ['corechart'] });
-// google.charts.setOnLoadCallback();
+
 @Component({
   selector: 'statistic-page',
   templateUrl: './statistic-page.component.html',
@@ -32,19 +31,16 @@ export class StatisticPageComponent implements OnInit {
     this.getMarketPrice()
     this.getTransSection()
   }
+
   async getMarketPrice() {
     this.marketPrice = await this.bitcoinService.getMarketPrice()
-    console.log('market in statistic:', this.marketPrice);
     this.setChartMarket(this.marketPrice)
-
   }
-  setChartMarket(data: any) {
-    console.log(data);
 
+  setChartMarket(data: any) {
     var newArr = []
     var arrayData = data.values.map((val?: any) => {
       newArr = [`${new Date(val.x * 1000).toLocaleDateString()}`, val.y]
-      console.log(newArr);
       return newArr
     })
 
@@ -64,11 +60,9 @@ export class StatisticPageComponent implements OnInit {
   }
 
   setChartTrans(data: any) {
-    console.log(data);
     var newArr = []
     var arrayData = data.values.map((val?: any) => {
       newArr = [`${new Date(val.x * 1000).toLocaleDateString()}`, (val.y)]
-      console.log(newArr);
       return newArr
     })
 
@@ -78,8 +72,8 @@ export class StatisticPageComponent implements OnInit {
       vAxis: { title: 'Bitcoins transitions' }
     }
 
-    this.titleT = this.marketPrice.description
-    this.nameT = this.marketPrice.name
+    this.titleT = this.transSection.description
+    this.nameT = this.transSection.name
   }
 
 }

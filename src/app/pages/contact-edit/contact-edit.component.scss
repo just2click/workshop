@@ -23,7 +23,7 @@
                     height: 40px;
                     font-size: 16px;
                     padding-left: 9px;
-                    width: 80%;
+                    width: 85%;
                     border: 2px solid gray;
                     border-radius: 4px;
                     margin-bottom: 20px;
@@ -41,17 +41,39 @@
 }
 @media (max-width: 500px) {
     .contact-edit {
+        margin-top: 38%;
+        .edit-top {
+            margin-top: -16%;
+            margin-left: 1%;
+        }
         form {
-            margin-left: 4%;
+            margin-left: 2%;
             width: 100%;
-            input {
-                height: 40px;
-                font-size: 16px;
-                padding-left: 9px;
-                width: 80%;
-                border: 2px solid gray;
-                border-radius: 4px;
-                margin: 8px 3px 20px 10px;
+            .save-btn {
+                margin-right: 25.5px;
+                width: 77px;
+                padding: 3%;
+                background-color: #b3b3b3;
+                border: none;
+                border-radius: 2.5px;
+                font-size: initial;
+                color: #313131;
+                font-family: cursive;
+                font-weight: bold;
+                padding-bottom: 12px;
+            }
+            .contact-info {
+                div {
+                    input {
+                        height: 40px;
+                        font-size: 16px;
+                        padding-left: 9px;
+                        width: 85%;
+                        border: 2px solid gray;
+                        border-radius: 4px;
+                        margin: 8px 3px 15px 10px;
+                    }
+                }
             }
         }
     }

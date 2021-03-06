@@ -18,12 +18,12 @@
     </ul>
     <div class="transfer">
         <p>Transfer coins to {{contact.name}}</p>
-        <input type="text" [(ngModel)]="amount">
-        <button (click)="onTransfer()" class="btn">Transfer</button>
+        <input type="text" [(ngModel)]="amount" placeholder="#">
+        <button (click)="onTransfer()" class="btn"><span>Transfer</span></button>
     </div>
     <div class="specificMoves" >
         <div class="top">
-            <p>Your Moves:</p>
+            <p class="moves-title">Your Moves:</p>
             <hr>
             <spec-moves-preview *ngFor="let move of specMoves" [move]="move"></spec-moves-preview>
         </div>

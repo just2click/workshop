@@ -10,8 +10,6 @@ export class SpecMovesPreviewComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log('sdfgb', this.move);
-
   }
 
 }

@@ -16,7 +16,5 @@ export class AppComponent {
 
   async ngOnInit() {
     const user = await this.userService.getUser()
-    console.log(user);
-    // if (user) this.router.navigateByUrl('/home')
   }
 }

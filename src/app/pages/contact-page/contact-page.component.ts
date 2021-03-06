@@ -24,8 +24,6 @@ export class ContactPageComponent implements OnInit {
     this.subscription = this.contactService.contacts$.subscribe(contacts => {
       this.contacts = contacts
     })
-    console.log('contacts:', this.contacts);
-
   }
   ngOnDestroy() {
     this.subscription.unsubscribe()

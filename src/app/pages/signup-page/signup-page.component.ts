@@ -16,7 +16,6 @@ export class SignupPageComponent implements OnInit {
   }
   onSubmitName() {
     this.userService.signup(this.name)
-    console.log(this.name);
     this.router.navigateByUrl('/')
   }
 }

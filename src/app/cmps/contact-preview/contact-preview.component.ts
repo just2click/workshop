@@ -11,9 +11,6 @@ export class ContactPreviewComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    // this.loadContactsProfile()
   }
-  //  async loadContactsProfile(){
 
-  // }
 }

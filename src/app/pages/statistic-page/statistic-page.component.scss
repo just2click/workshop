@@ -1,4 +1,10 @@
 .charts-container {
-    display: grid;
+    display: flex;
     justify-content: center;
+}
+@media (max-width: 500px) {
+    .charts-container {
+        display: grid;
+        padding-top: 96px;
+    }
 }

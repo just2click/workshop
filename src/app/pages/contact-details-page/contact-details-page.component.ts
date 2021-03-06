@@ -27,10 +27,6 @@ export class ContactDetailsPageComponent implements OnInit {
       this.contact = data.contact
     })
     this.loadUser()
-
-    // this.conatctService.getById(this.contactId).subscribe((contact) => {
-    //   this.contact = contact
-    // })
   }
 
   ngOnDestroy() {
@@ -39,25 +35,21 @@ export class ContactDetailsPageComponent implements OnInit {
 
   async loadUser() {
     this.user = await this.userService.getUser()
-    console.log('user in details', this.user);
     this.getSpesificMoves()
   }
 
   goToEdit() {
     this.isAtEdit = true
-
   }
 
   getSpesificMoves() {
-
     this.specMoves = this.user.moves.filter(move => move.to === this.contact.name)
-    console.log(this.specMoves);
-
   }
 
   onGoToContacts() {
     this.router.navigateByUrl('/contact')
   }
+  
   onTransfer() {
     this.userService.doMove(this.contact, this.amount)
     setTimeout(() => this.router.navigateByUrl('/'), 1500)

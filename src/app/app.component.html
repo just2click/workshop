@@ -6,6 +6,9 @@
     <button (click)="isAtContact=true">Contact-Page</button>
     <button (click)="isAtHome=false&&isAtContact=false&&isAtChart=true">Chart-Page</button> -->
 <nav>
+    <div class="logo">
+        <img   routerLink="" src="../assets/imgs/logo.png" />
+    </div>
     <ul>
         <li><a routerLink="" routerLinkActive="active-nav" [routerLinkActiveOptions]="{exact:true}">
             <img src="../assets/imgs/home.png" alt="">

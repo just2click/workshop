@@ -15,10 +15,5 @@ export class ContactListComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  // openEdit() {
-  //   this.router.navigateByUrl(this.router.url === '/edit' ? 'contact' : 'edit')
-  // }
-  // openEdit() {
-  //   this.isAtEdit = true
-  // }
+
 }

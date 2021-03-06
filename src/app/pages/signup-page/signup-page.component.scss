@@ -2,6 +2,14 @@
     display: grid;
     justify-content: center;
     margin-top: 125px;
+    font-family: system-ui;
+    .img {
+        margin: auto;
+        img {
+            width: 95px;
+        }
+    }
+
     .input {
         height: 50px;
         display: grid;
@@ -16,10 +24,10 @@
             border-radius: 3px;
         }
     }
-    .img {
-        margin: auto;
-        img {
-            width: 95px;
-        }
+    .btn {
+        background-color: #094340c2;
+        border: none;
+        color: white;
+        font-size: 18px;
     }
 }
