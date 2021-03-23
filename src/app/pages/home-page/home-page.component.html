@@ -2,11 +2,11 @@
     <div class="user-area">
         <h1>Hello {{user.name}}</h1>
         <div class="user-coins">
-            <img src="../../../assets/imgs/coins.png"/>
+            <img src="assets/imgs/coins.png" />
             <span><b>Coins:</b><small>    {{user.coins}}</small></span>
         </div>
         <div class="btc">
-            <img src="../../../assets/imgs/bitcoin.png"/>
+            <img src="assets/imgs/bitcoin.png" />
             <span><b>BTC:</b><small>    {{rate}}</small></span>
         </div>
     </div>
@@ -15,7 +15,7 @@
             <p class="moves-title" *ngIf="user.moves.length"> Your last {{(user.moves).length}} Moves:</p>
             <p class="moves-title" *ngIf="!user.moves.length">You have no moves yet</p>
             <hr>
-            <move-preview  *ngFor="let move of user.moves" [move]="move"></move-preview>
+            <move-preview *ngFor="let move of user.moves" [move]="move"></move-preview>
         </div>
     </div>
     <!-- <router-outlet></router-outlet> -->

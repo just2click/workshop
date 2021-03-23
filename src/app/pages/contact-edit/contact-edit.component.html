@@ -1,33 +1,33 @@
 <div class="contact-edit">
- <div class="edit-top">
-     <div class="top-btns">
-         <div class="back">
-             <img src="../../../assets/imgs/back.png" (click)="onGoToDetails()">
-         </div>
-         <div class="delete" *ngIf="contact._id">
-             <img src="../../../assets/imgs/delete.png" (click)="removeContact()"/>
+    <div class="edit-top">
+        <div class="top-btns">
+            <div class="back">
+                <img src="assets/imgs/back.png" (click)="onGoToDetails()">
             </div>
-     </div >
-        <img *ngIf="contact._id" src="https://robohash.org/set_set5/{{contact._id}}?size=50x50">
- </div>
-<form #form="ngForm" (ngSubmit)="onSubmitForm(form.value)" autocomplete="off">
-    <div class="contact-info">
-        <div class="input name">
-        <!-- <label for="">Name</label> -->
-        <input type="text" placeholder="Name" [(ngModel)]="contact.name" name="name" >
-    </div>
-    <div class="input phone">
-        <!-- <label for="">Phone</label> -->
-        <input type="text" placeholder="Phone" [(ngModel)]="contact.phone" name="phone" >
-    </div> 
-    <div class="input email">
-        <!-- <label for="">Email</label> -->
-        <input type="text" placeholder="Email" [(ngModel)]="contact.email" name="email" >
-    </div>
-        <div align="end">
-            <button type="submit" class="save-btn"><span>Save</span> </button>
+            <div class="delete" *ngIf="contact._id">
+                <img src="assets/imgs/delete.png" (click)="removeContact()" />
+            </div>
         </div>
+        <img *ngIf="contact._id" src="https://robohash.org/set_set5/{{contact._id}}?size=50x50">
     </div>
-</form>
+    <form #form="ngForm" (ngSubmit)="onSubmitForm(form.value)" autocomplete="off">
+        <div class="contact-info">
+            <div class="input name">
+                <!-- <label for="">Name</label> -->
+                <input type="text" placeholder="Name" [(ngModel)]="contact.name" name="name">
+            </div>
+            <div class="input phone">
+                <!-- <label for="">Phone</label> -->
+                <input type="text" placeholder="Phone" [(ngModel)]="contact.phone" name="phone">
+            </div>
+            <div class="input email">
+                <!-- <label for="">Email</label> -->
+                <input type="text" placeholder="Email" [(ngModel)]="contact.email" name="email">
+            </div>
+            <div align="end">
+                <button type="submit" class="save-btn"><span>Save</span> </button>
+            </div>
+        </div>
+    </form>
 
 </div>
